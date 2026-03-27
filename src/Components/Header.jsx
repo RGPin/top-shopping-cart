@@ -2,12 +2,17 @@ import { Link } from "react-router";
 
 function Header() {
   return (
-    <header>
-      <Link to="/">
-        <img src={"/assets/logo.png"} alt="logo" />
+    <header className="header">
+      <Link to="/" className="title-logo">
+        <img src={"/assets/logo.png"} alt="logo" className="logo" />
+        <h1 className="title">Cartly</h1>
       </Link>
-      <Link to="/shop">Shop</Link>
-      <Link to="/cart">Cart</Link>
+      <Link to="/shop">
+        <h1>Shop</h1>
+      </Link>
+      <Link to="/cart">
+        <h1>Cart</h1>
+      </Link>
     </header>
   );
 }
