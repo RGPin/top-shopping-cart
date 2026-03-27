@@ -1,11 +1,12 @@
 import ShopPage from "./Components/ShopPage";
 import HomePage from "./Components/HomePage";
 import CartPage from "./Components/CartPage";
+import App from "./Components/App";
 
 const routes = [
   {
     path: "/",
-    element: <HomePage />,
+    element: <App />,
   },
   {
     path: "shop",
