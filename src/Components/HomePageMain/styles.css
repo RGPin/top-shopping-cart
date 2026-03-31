@@ -1,0 +1,7 @@
+.home-main {
+  display: flex;
+}
+
+.img-container img {
+  width: 100%;
+}
