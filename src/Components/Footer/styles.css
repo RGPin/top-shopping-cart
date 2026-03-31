@@ -1,0 +1,8 @@
+footer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.link-container li {
+  list-style-type: circle;
+}
