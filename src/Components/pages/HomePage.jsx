@@ -1,5 +1,5 @@
 import { Link } from "react-router";
-import Header from "../Header";
+import Header from "../Header/Header";
 import HomePageMain from "../HomePageMain/HomePageMain";
 
 function HomePage() {

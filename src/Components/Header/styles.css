@@ -1,0 +1,19 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.header {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.title-logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  height: 100px;
+}
