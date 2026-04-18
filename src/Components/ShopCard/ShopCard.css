@@ -1,0 +1,26 @@
+.product-card {
+  width: 300px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.product-card-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card-image {
+  max-width: 90%;
+  height: 200px;
+  object-fit: contain;
+}
+
+.truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}

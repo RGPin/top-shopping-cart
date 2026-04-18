@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import useFetch from "../../hooks/useFetch";
+import ShopGrid from "../ShopGrid/ShopGrid";
 
 function ShopPage() {
   const [data, error, loading] = useFetch(
@@ -12,9 +13,11 @@ function ShopPage() {
   return (
     <>
       <Header />
-      {loading && <h3>Loading, please wait...</h3>}
-      {error && <h3>Error encountered: {error}</h3>}
-      {data && data.map((product) => <p key={product.id}>{product.title}</p>)}
+      <main>
+        {loading && <h3>Loading, please wait...</h3>}
+        {error && <h3>Error encountered: {error}</h3>}
+        {data && <ShopGrid products={data} />}
+      </main>
       <Footer />
     </>
   );
