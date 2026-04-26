@@ -6,6 +6,7 @@ export default function useFetch(url, options = {}) {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    if (!url) return;
     const controller = new AbortController();
 
     async function fetchData() {
