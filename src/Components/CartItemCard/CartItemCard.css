@@ -1,0 +1,25 @@
+.cart-item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 30%;
+}
+
+.item-img {
+  
+  width: 200px;
+  object-fit: contain;
+}
+
+.item-title {
+  width: 50%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

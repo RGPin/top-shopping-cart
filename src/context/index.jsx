@@ -15,13 +15,24 @@ export default function GlobalState({ children }) {
         );
       }
 
-      return [...prevState, { id: product.id, count: 1 }];
+      return [...prevState, { ...product, count: 1 }];
     });
   }
 
-  function handleDecrementProduct() {}
+  function handleDecrementProduct(product) {
+    setCartContents((prevState) => {
+      const existingProduct = prevState.find((item) => item.id === product.id);
 
-  console.log(cartContents);
+      if (!existingProduct) return prevState;
+
+      return prevState
+        .map((item) =>
+          item.id === product.id ? { ...item, count: item.count - 1 } : item,
+        )
+        .filter((item) => item.count > 0);
+    });
+  }
+
   return (
     <GlobalContext.Provider
       value={{
