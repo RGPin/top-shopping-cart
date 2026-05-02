@@ -45,10 +45,6 @@ export default function GlobalState({ children }) {
     event.stopPropagation();
   }
 
-  function handleShowDetails() {
-    console.log("clicked");
-  }
-
   useEffect(() => {
     if (data) setValue(data);
   }, [data]);
@@ -61,7 +57,6 @@ export default function GlobalState({ children }) {
         cartContents,
         handleIncrementProduct,
         handleDecrementProduct,
-        handleShowDetails,
         products,
         loading,
         error,

@@ -31,13 +31,13 @@
 }
 
 .add-to-cart-container {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
+  max-width: 300px;
+  text-align: center;
+  margin-top: auto;
 }
 
 .add-to-cart-text {
-  text-align: center;
+  font-size: 2rem;
   margin-bottom: 10px;
 }
 

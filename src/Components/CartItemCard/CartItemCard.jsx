@@ -4,7 +4,7 @@ import "./CartItemCard.css";
 import { useNavigate } from "react-router";
 
 export default function CartItemCard({ product }) {
-  const { handleIncrementProduct, handleDecrementProduct, handleShowDetails } =
+  const { handleIncrementProduct, handleDecrementProduct } =
     useContext(GlobalContext);
 
   const navigate = useNavigate();
