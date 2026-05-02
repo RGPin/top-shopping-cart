@@ -5,6 +5,7 @@ import useFetch from "../../hooks/useFetch";
 import ShopGrid from "../ShopGrid/ShopGrid";
 import useSessionStorage from "../../hooks/useSessionStorage";
 import { useEffect, useState } from "react";
+import "./ShopPage.css";
 
 function ShopPage() {
   const [storedValue, setValue, sessionStorageErr] = useSessionStorage(
@@ -26,9 +27,13 @@ function ShopPage() {
     <>
       <Header />
       <main>
-        {loading && <h3>Loading, please wait...</h3>}
-        {error && <h3>Error encountered: {error}</h3>}
-        {products && <ShopGrid products={products} />}
+        {loading && <h3 className="loading">Loading, please wait...</h3>}
+        {error && <h3 className="error">Error encountered: {error}</h3>}
+        {products ? (
+          <ShopGrid products={products} />
+        ) : (
+          <h3 className="empty-shop-list"></h3>
+        )}
       </main>
       <Footer />
     </>

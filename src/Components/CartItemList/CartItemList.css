@@ -1,0 +1,11 @@
+.cart-list-container {
+  margin-top: 20px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.empty-cart-list {
+  min-height: 70vh;
+}

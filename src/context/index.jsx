@@ -5,7 +5,7 @@ export const GlobalContext = createContext(null);
 export default function GlobalState({ children }) {
   const [cartContents, setCartContents] = useState([]);
 
-  function handleIncrementProduct(product) {
+  function handleIncrementProduct(event, product) {
     setCartContents((prevState) => {
       const existingProduct = prevState.find((item) => item.id === product.id);
 
@@ -17,9 +17,10 @@ export default function GlobalState({ children }) {
 
       return [...prevState, { ...product, count: 1 }];
     });
+    event.stopPropagation();
   }
 
-  function handleDecrementProduct(product) {
+  function handleDecrementProduct(event, product) {
     setCartContents((prevState) => {
       const existingProduct = prevState.find((item) => item.id === product.id);
 
@@ -31,6 +32,11 @@ export default function GlobalState({ children }) {
         )
         .filter((item) => item.count > 0);
     });
+    event.stopPropagation();
+  }
+
+  function handleShowDetails() {
+    console.log("clicked");
   }
 
   return (
@@ -39,6 +45,7 @@ export default function GlobalState({ children }) {
         cartContents,
         handleIncrementProduct,
         handleDecrementProduct,
+        handleShowDetails,
       }}
     >
       {children}

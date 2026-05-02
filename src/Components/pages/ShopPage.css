@@ -1,0 +1,7 @@
+.empty-shop-list {
+  min-height: 80vh;
+}
+
+.error, .loading {
+  min-height: 70vh;
+}

@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../context";
 import CartItemCard from "../CartItemCard/CartItemCard";
+import "./CartItemList.css";
 
 export default function CartItemList() {
   const { cartContents } = useContext(GlobalContext);
@@ -12,7 +13,7 @@ export default function CartItemList() {
           <CartItemCard product={item} key={item.id} />
         ))
       ) : (
-        <h1>No items added in the cart</h1>
+        <h1 className="empty-cart-list">No items added in the cart</h1>
       )}
     </div>
   );
