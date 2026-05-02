@@ -1,13 +1,19 @@
 import { useContext } from "react";
 import { GlobalContext } from "../../context";
 import "./CartItemCard.css";
+import { useNavigate } from "react-router";
 
 export default function CartItemCard({ product }) {
   const { handleIncrementProduct, handleDecrementProduct, handleShowDetails } =
     useContext(GlobalContext);
 
+  const navigate = useNavigate();
+
   return (
-    <div className="cart-item-card" onClick={handleShowDetails}>
+    <div
+      className="cart-item-card"
+      onClick={() => navigate(`/shop/${product.id}`)}
+    >
       <div className="item-img-container">
         <img className="item-img" src={product.image} />
       </div>
