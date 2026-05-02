@@ -4,25 +4,12 @@ import Footer from "../Footer/Footer";
 import useFetch from "../../hooks/useFetch";
 import ShopGrid from "../ShopGrid/ShopGrid";
 import useSessionStorage from "../../hooks/useSessionStorage";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./ShopPage.css";
+import { GlobalContext } from "../../context";
 
 function ShopPage() {
-  const [storedValue, setValue, sessionStorageErr] = useSessionStorage(
-    "fakestoreapi-products",
-  );
-  const shouldFetch = storedValue == null;
-  const [data, error, loading] = useFetch(
-    shouldFetch ? "https://fakestoreapi.com/products" : null,
-    {},
-  );
-
-  useEffect(() => {
-    if (data) setValue(data);
-  }, [data]);
-
-  const products = storedValue ?? data;
-  // console.log(JSON.stringify(data));
+  const { products, loading, error } = useContext(GlobalContext);
   return (
     <>
       <Header />

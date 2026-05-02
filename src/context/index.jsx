@@ -1,9 +1,19 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import useSessionStorage from "../hooks/useSessionStorage";
+import useFetch from "../hooks/useFetch";
 
 export const GlobalContext = createContext(null);
 
 export default function GlobalState({ children }) {
   const [cartContents, setCartContents] = useState([]);
+  const [storedValue, setValue, sessionStorageErr] = useSessionStorage(
+    "fakestoreapi-products",
+  );
+  const shouldFetch = storedValue == null;
+  const [data, error, loading] = useFetch(
+    shouldFetch ? "https://fakestoreapi.com/products" : null,
+    {},
+  );
 
   function handleIncrementProduct(event, product) {
     setCartContents((prevState) => {
@@ -39,6 +49,12 @@ export default function GlobalState({ children }) {
     console.log("clicked");
   }
 
+  useEffect(() => {
+    if (data) setValue(data);
+  }, [data]);
+
+  const products = storedValue ?? data;
+
   return (
     <GlobalContext.Provider
       value={{
@@ -46,6 +62,9 @@ export default function GlobalState({ children }) {
         handleIncrementProduct,
         handleDecrementProduct,
         handleShowDetails,
+        products,
+        loading,
+        error,
       }}
     >
       {children}
