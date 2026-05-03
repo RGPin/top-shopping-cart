@@ -18,7 +18,7 @@ export default function CartItemCard({ product }) {
         <img className="item-img" src={product.image} />
       </div>
       <h3 className="item-title">{product.title}</h3>
-      <div>
+      <div className="btn-wrapper">
         <button
           className="cart-item-btn"
           onClick={(event) => handleDecrementProduct(event, product)}
