@@ -6,3 +6,52 @@
   margin-bottom: 20px;
   min-height: 75vh;
 }
+
+.summary-details {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 1.2rem;
+}
+
+.detail {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+}
+
+.detail-value {
+  font-weight: normal;
+}
+
+.detail-value::before {
+  content: "$";
+}
+
+.coupon-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.coupon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0px 10px;
+  border: none;
+  background-color: #f6f5f1;
+}
+
+.hidden {
+  display: none;
+}
+
+.checkout-btn {
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+}

@@ -55,6 +55,7 @@ export default function GlobalState({ children }) {
     <GlobalContext.Provider
       value={{
         cartContents,
+        setCartContents,
         handleIncrementProduct,
         handleDecrementProduct,
         products,
